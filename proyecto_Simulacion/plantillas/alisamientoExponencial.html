@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{% block title %} CuadradosMedios {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Alisamiento Exponencial</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>  
+<form action="/alisamientoExponencial/" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">Lista de datos:</label>
+      <small id="emailHelp" class="form-text text-muted">ingrese los datos de la muestra separados por una coma (,) Los decimales se denotan con un punto (.)</small>
+      <input type="text" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="lista" class="form-control" id="lista" placeholder="54.9,15.7,83.1" required>
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">alfa:</label>
+      <input type="number" step="0.01" name="alfa" class="form-control" id="alfa" placeholder="valor de alfa" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcular</button>
+</form>
+{% endblock %}

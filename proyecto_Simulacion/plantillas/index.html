@@ -1,0 +1,34 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} Inicio {% endblock %}
+{% block content %}
+<section id="banner">
+  <img src="{% static 'img/inicio/banner.jpg'%}">
+  <div class="contenedor">
+  <h2>Simulation Techniques</h2>
+  <p>Generador de numeros randoms, variables aleatorias, Metodos Probabilisticos, pronosticos y mas....</p>
+  <a href="#">Leer mas</a>
+  </div>
+</section>
+<section id="bienvenidos">
+  <h2>¡ BIENVENIDO !</h2>
+  <P>Con esta herramienta web podra ejecutar diversos modelos y metodos que se aplican en las tecnicas de simulacion.</P>
+</section>
+<section id="blog">
+  <h3></h3>
+  <div class="contenedor">
+      <article>
+          <img src="{% static 'img/inicio/randoms.png'%}" >
+          <h4>Randoms</h4>
+      </article>
+      <article>
+          <img src="{% static 'img/inicio/pronosticos.png'%}" >
+          <h4>Pronosticos</h4>
+      </article>
+      <article>
+          <img src="{% static 'img/inicio/lineasDeEspera.jpg'%}" >
+          <h4>Simulacion</h4>
+      </article>              
+</section>
+</div>
+{% endblock %}

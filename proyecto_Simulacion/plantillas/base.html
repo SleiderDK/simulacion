@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css'%}">   
+</head>
+<body>
+   <main>
+    <div id="menu-container">
+        <div id="menu-wrapper">
+           <div id="hamburger-menu"><span></span><span></span><span></span></div>
+           <!-- hamburger-menu -->
+        </div>
+        <!-- menu-wrapper -->
+        <ul class="menu-list accordion">
+         <li id="nav0" class="toggle accordion-toggle"> 
+            <a class="menu-link" href="#" style="color:#FFF">Home</a>
+         </li>
+         <!-- accordion-toggle -->
+         <ul class="menu-submenu accordion-content" id="menu-submenu">
+            <li><a class="head" href="/Inicio/" style="color:#FFF">Inicio</a></li>
+         </ul>
+
+           <li id="nav1" class="toggle accordion-toggle"> 
+              <span class="icon-plus"></span>
+              <a class="menu-link" href="#" style="color:#FFF">Metodos Randoms</a>
+           </li>
+           <!-- accordion-toggle -->
+           <ul class="menu-submenu accordion-content" id="menu-submenu">
+              <li><a class="head" href="/cuadrados_Medios/" style="color:#FFF">Cuadrado Medio</a></li>
+              <li><a class="head" href="/congruencial_Lineal/" style="color:#FFF">Congruencial Lineal</a></li>
+           </ul>
+           <li id="nav2" class="toggle accordion-toggle"> 
+              <span class="icon-plus"></span>
+              <a class="menu-link" href="#" style="color:#FFF">Variables aleatorias</a>
+           </li>
+           <!-- accordion-toggle -->
+           <ul class="menu-submenu accordion-content" id="menu-submenu">
+              <li><a class="head" href="/transformada_Inversa/" style="color:#FFF">Trasformada Inversa</a></li>
+           </ul>
+           <!-- menu-submenu accordon-content-->
+           <li id="nav3" class="toggle accordion-toggle"> 
+              <span class="icon-plus"></span>
+              <a class="menu-link" href="#" style="color:#FFF">Metodos Probabilisticos</a>
+           </li>
+           <!-- accordion-toggle -->
+           <ul class="menu-submenu accordion-content">
+              <li><a class="head" href="/promedio_Movil/" style="color:#FFF">Promedio Movil</a></li>
+              <li><a class="head" href="/alisamiento_Exponencial/" style="color:#FFF">Alisamiento Exponencial</a></li>
+           </ul>
+           <!-- menu-submenu accordon-content-->
+            <li id="nav4" class="toggle accordion-toggle"> 
+              <span class="icon-plus"></span>
+              <a class="menu-link" href="#" style="color:#FFF">Pronosticos</a>
+           </li>
+           <!-- accordion-toggle -->
+           <ul class="menu-submenu accordion-content">
+              <li><a class="head" href="/regresion_Lineal/" style="color:#FFF">Regresion Lineal</a></li>
+              <li><a class="head" href="/regresion_No_Lineal/" style="color:#FFF">Regresion no lineal</a></li>
+           </ul>
+           <!-- menu-submenu accordon-content-->
+           <li id="nav5" class="toggle accordion-toggle"> 
+            <span class="icon-plus"></span>
+            <a class="menu-link" href="#" style="color:#FFF">Metodos Simulacion</a>
+         </li>
+         <!-- accordion-toggle -->
+         <ul class="menu-submenu accordion-content">
+            <li><a class="head" href="/linea_De_Espera/" style="color:#FFF">Linea de espera con distribución exponencial</a></li>
+            <li><a class="head" href="/linea_De_Espera_Montecarlo/" style="color:#FFF">Linea de espera con Montecarlo</a></li>
+         </ul>
+           <!-- menu-submenu accordon-content-->
+        </ul>
+        <!-- menu-list accordion-->
+        
+     </div>
+     
+     <div class="container">
+      {% block content %} {% endblock %}
+     </div>
+     <!-- menu-container --> 
+     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>    
+     <script src="{% static 'js/base.js'%}"></script>
+   </main>  
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% load static %}
+{% block title %} CuadradosMedios {% endblock %}
+{% block content %}
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Metodo de regresion lineal</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div> 
+
+<form action="/regresionLineal/" method="POST" onsubmit="return validateMyForm();">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="formGroupExampleInput">Lista de datos <b>X</b>:</label>
+      <small id="emailHelp" class="form-text text-muted">ingrese los datos de la muestra separados por una coma (,) Los decimales se denotan con un punto (.)</small>    
+      <input type="text" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="listaX" class="form-control" id="listaX" placeholder="54.9,15.7,83.1" required>
+      
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput">Lista de datos <b>Y</b>: </label>
+      <input type="text" pattern="[0-9 . , ]+" title="Solo se pueden ingresar numeros separados por comas" name="listaY" class="form-control" id="listaY" placeholder="54.9,15.7,83.1" required>
+      </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Prediccion de <b>Y</b> cuando <b>X</b> valga:</label>
+      <input type="number" step="0.01" name="predecir" class="form-control" id="predecir" placeholder="valor a predecir" required>
+    </div>
+    <button type="submit" class="btn btn-primary" onclick="validarListasIguales()">Calcular</button>
+</form>
+<script src="{% static 'js/validarListas_Iguales.js'%}"></script>
+{% endblock %}
