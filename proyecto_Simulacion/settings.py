@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'twgx!s*f4%39g+4jy^hj=d44+z#x(ssxrl1%6r30pxnb_)g+9i'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','sleider.pythonanywhere.com']
 
 
 # Application definition
